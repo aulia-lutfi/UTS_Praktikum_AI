@@ -1,0 +1,4 @@
+streamlit>=1.30
+fpdf2>=2.7
+pandas>=2.0
+# opsional untuk menjalankan pengujian: pytest>=7
