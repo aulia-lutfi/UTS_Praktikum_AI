@@ -1,5 +1,4 @@
 """Tab Diagnosa: input gejala, hasil, CF, WHY, dan HOW."""
-import os
 from datetime import datetime
 
 import pandas as pd
@@ -10,36 +9,6 @@ from core.explanation import how, reasoning_graph, why
 
 KUNCI_PILIHAN = "gejala_dipilih_v3"
 KUNCI_HASIL = "hasil_diagnosa_v3"
-
-
-def _tampilkan_referensi(referensi: list, prefix: str = "diag"):
-    """Helper untuk menampilkan referensi dengan tombol PDF atau Link Web."""
-    if not referensi:
-        return
-    st.markdown("**Referensi Jurnal & Sumber Resmi:**")
-    for i, ref in enumerate(referensi):
-        if isinstance(ref, dict):
-            judul = ref.get('title', 'Sumber')
-            url = ref.get('url', '#')
-            
-            if url.endswith(".pdf"):
-                if os.path.exists(url):
-                    with open(url, "rb") as f:
-                        st.download_button(
-                            label=f"📄 Unduh PDF: {judul}",
-                            data=f,
-                            file_name=os.path.basename(url),
-                            mime="application/pdf",
-                            key=f"{prefix}_pdf_{i}_{url}"
-                        )
-                else:
-                    st.warning(f"⚠️ File PDF tidak ditemukan: {url}")
-            elif url.startswith("http"):
-                st.link_button(f"🔗 Buka Sumber: {judul}", url=url)
-            else:
-                st.write(f"• {judul} ({url})")
-        else:
-            st.write(f"• {ref}")
 
 
 def _toggle(sid: str) -> None:
@@ -81,44 +50,45 @@ def _form_gejala(kb) -> None:
     for kategori, tab_obj in kategori_map.items():
         with tab_obj:
             st.caption(f"Centang gejala {kategori.lower()} untuk memilih tingkat keyakinan pengamatan Anda:")
-            ada = False
+            gejala_kategori = []
             for sid, s in kb.symptoms.items():
                 s_nama = s.get("nama") or s.get("name") or sid
                 s_kat = s.get("kategori") or s.get("category") or "Fisik"
-                
                 if s_kat != kategori or (cari and cari not in s_nama.lower()):
                     continue
-                ada = True
-                kol1, kol2 = st.columns([3, 1.5])
-                
-                is_checked = sid in pilihan
-                
-                kol1.checkbox(
-                    f"[{sid}] {s_nama}", 
-                    value=is_checked, 
-                    key=f"chk_v3_{sid}",
-                    on_change=_toggle, 
-                    args=(sid,), 
-                    help=why(sid, kb.rules)
-                )
-                
-                with kol2:
-                    if is_checked:
-                        current_val = pilihan.get(sid, KEYAKINAN_DEFAULT)
-                        current_idx = labels.index(current_val) if current_val in labels else labels.index(KEYAKINAN_DEFAULT)
-                        
-                        st.selectbox(
-                            "Tingkat Keyakinan", 
-                            options=labels, 
-                            index=current_idx,
-                            key=f"select_v3_{sid}", 
-                            on_change=_set_level, 
-                            args=(sid,),
-                            label_visibility="collapsed"
-                        )
-                        
-            if not ada:
+                gejala_kategori.append((sid, s_nama))
+
+            if not gejala_kategori:
                 st.caption("Tidak ada gejala yang cocok.")
+                continue
+
+            # Pisahkan daftar menjadi dua kolom agar tab fisik tidak terlalu panjang.
+            kolom_gejala = st.columns(2)
+            for kolom, daftar_kolom in zip(kolom_gejala, (gejala_kategori[::2], gejala_kategori[1::2])):
+                with kolom:
+                    for sid, s_nama in daftar_kolom:
+                        is_checked = sid in pilihan
+                        st.checkbox(
+                            f"[{sid}] {s_nama}",
+                            value=is_checked,
+                            key=f"chk_v3_{sid}",
+                            on_change=_toggle,
+                            args=(sid,),
+                            help=why(sid, kb.rules),
+                        )
+
+                        if is_checked:
+                            current_val = pilihan.get(sid, KEYAKINAN_DEFAULT)
+                            current_idx = labels.index(current_val) if current_val in labels else labels.index(KEYAKINAN_DEFAULT)
+                            st.selectbox(
+                                "Tingkat Keyakinan",
+                                options=labels,
+                                index=current_idx,
+                                key=f"select_v3_{sid}",
+                                on_change=_set_level,
+                                args=(sid,),
+                                label_visibility="collapsed",
+                            )
 
 
 def _jalankan(kb, engine, history, ikan: str, fakta: dict) -> None:
@@ -204,9 +174,15 @@ def _tampilkan_hasil(kb) -> None:
                 st.write(f"**Rekomendasi pengobatan:** {h['pengobatan']}")
                 st.write(f"**Pencegahan penyebaran:** {h['pencegahan']}")
                 
-                # Panggil fungsi referensi di sini
                 rujukan_list = penyakit.get("references") or penyakit.get("sumber") or []
-                _tampilkan_referensi(rujukan_list, prefix=f"diag_{h['id']}")
+                if rujukan_list:
+                    st.markdown("**Referensi Jurnal & Sumber Resmi:**")
+                    if isinstance(rujukan_list, list):
+                        for ref in rujukan_list:
+                            if isinstance(ref, dict):
+                                st.markdown(f"• **{ref.get('title', 'Sumber')}** — [🔗 Buka Sumber Jurnal]({ref.get('url', '#')})")
+                            else:
+                                st.write(f"• {ref}")
 
                 with st.expander("Bagaimana kesimpulan ini didapat? (HOW)", expanded=True):
                     for n, baris in enumerate(data["how"].get(h["id"], []), 1):
@@ -224,48 +200,14 @@ def _tampilkan_hasil(kb) -> None:
         else:
             st.write("Tidak ada rule yang dieksekusi.")
 
-def _render_backward_chaining(kb, engine, ikan, fakta):
-    """Menampilkan UI untuk Backward Chaining (Goal-Driven)."""
-    st.markdown("---")
-    st.subheader("🎯 Uji Hipotesis (Backward Chaining)")
-    st.caption("Pilih penyakit yang ingin diuji. Sistem akan menelusuri mundur (Goal-Driven) untuk membuktikan apakah gejala yang ada cukup, dan memberi tahu gejala apa yang kurang.")
-    
-    # Pilih penyakit sebagai Goal
-    opsi_penyakit = {pid: f"{pid} - {p.get('name', p.get('nama', pid))}" for pid, p in kb.diseases.items()}
-    goal = st.selectbox("Pilih Hipotesis Penyakit:", options=list(opsi_penyakit.keys()), format_func=lambda x: opsi_penyakit[x], key="bc_goal")
-    
-    if st.button("Uji Hipotesis", type="secondary", key="btn_bc"):
-        if not fakta:
-            st.warning("Pilih minimal satu gejala di atas terlebih dahulu untuk diuji.")
-            return
-            
-        # Panggil fungsi backward_chain dari inference_engine.py
-        hasil = engine.backward_chain(goal, fakta, ikan)
-        
-        st.markdown(f"### Hasil Uji: **{opsi_penyakit[goal]}**")
-        
-        if hasil["terbukti"]:
-            st.success(f"✅ **Hipotesis Terbukti!** Gejala yang Anda berikan cukup untuk mendiagnosis **{opsi_penyakit[goal]}** dengan tingkat kepercayaan **{hasil['cf']*100:.1f}%**.")
-        else:
-            st.error("❌ **Hipotesis Belum Terbukti.** Gejala yang Anda berikan belum cukup untuk menyimpulkan penyakit ini.")
-            
-        with st.expander("Lihat Alur Penalaran (Reasoning Trace)", expanded=True):
-            for baris in hasil["trace"]:
-                st.code(baris, language="text")
-                
-        if hasil["kurang"]:
-            st.warning("**Gejala yang masih kurang (perlu ditanyakan/diperiksa):**")
-            for rule_id, gejala_kurang in hasil["kurang"].items():
-                nama_gejala = [kb.symptoms.get(g, {}).get("nama", g) for g in gejala_kurang]
-                st.write(f"- Rule **{rule_id}** membutuhkan: {', '.join(nama_gejala)}")
-
 
 def render(kb, engine, history) -> None:
-    ikan = st.selectbox("Jenis ikan", DAFTAR_IKAN, index=None, placeholder="Pilih jenis ikan", key="diag_ikan_v3")
+    ikan = st.selectbox("Jenis ikan", DAFTAR_IKAN, index=None, placeholder="Pilih jenis ikan",
+                        key="diag_ikan_v3")
     _form_gejala(kb)
 
     kol1, kol2 = st.columns([1, 5])
-    if kol1.button("Diagnosa (Forward Chaining)", type="primary", key="btn_diag_submit"):
+    if kol1.button("Diagnosa", type="primary", key="btn_diag_submit"):
         raw_pilihan = st.session_state.get(KUNCI_PILIHAN, {})
         fakta = {sid: KEYAKINAN[lbl] for sid, lbl in raw_pilihan.items() if lbl in KEYAKINAN}
 
@@ -275,22 +217,6 @@ def render(kb, engine, history) -> None:
             st.warning("Pilih minimal satu gejala.")
         else:
             _jalankan(kb, engine, history, ikan, fakta)
-            
     kol2.button("Reset", on_click=_reset, key="btn_diag_reset")
 
-    # --- LOGIKA TAMPILAN HASIL ---
-    raw_pilihan = st.session_state.get(KUNCI_PILIHAN, {})
-    fakta_saat_ini = {sid: KEYAKINAN[lbl] for sid, lbl in raw_pilihan.items() if lbl in KEYAKINAN}
-
-    # Jika ada gejala yang dipilih dan jenis ikan sudah dipilih, tampilkan Tab
-    if fakta_saat_ini and ikan:
-        tab_hasil, tab_uji = st.tabs(["📋 Hasil Diagnosis (Forward)", "🎯 Uji Hipotesis (Backward)"])
-        
-        with tab_hasil:
-            _tampilkan_hasil(kb)      # <-- HANYA DIPANGGIL SEKALI DI SINI
-            
-        with tab_uji:
-            _render_backward_chaining(kb, engine, ikan, fakta_saat_ini)
-    else:
-        # Jika belum ada gejala/ikan, tampilkan pesan kosong
-        st.info("Silakan pilih jenis ikan dan gejala, lalu klik 'Diagnosa' untuk melihat hasil.")
+    _tampilkan_hasil(kb)
