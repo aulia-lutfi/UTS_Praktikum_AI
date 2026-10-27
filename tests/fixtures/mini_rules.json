@@ -1,0 +1,70 @@
+[
+  {
+    "id": "R01",
+    "IF": [
+      "G01",
+      "G09"
+    ],
+    "THEN": "dugaan_parasit_kulit",
+    "CF": 0.7,
+    "ikan": [
+      "lele",
+      "nila",
+      "gurame"
+    ]
+  },
+  {
+    "id": "R02",
+    "IF": [
+      "dugaan_parasit_kulit",
+      "G08"
+    ],
+    "THEN": "P01",
+    "CF": 0.8,
+    "ikan": [
+      "lele",
+      "nila",
+      "gurame"
+    ]
+  },
+  {
+    "id": "R03",
+    "IF": [
+      "G02",
+      "G05"
+    ],
+    "THEN": "dugaan_infeksi_bakteri",
+    "CF": 0.7,
+    "ikan": [
+      "lele",
+      "nila",
+      "gurame"
+    ]
+  },
+  {
+    "id": "R04",
+    "IF": [
+      "dugaan_infeksi_bakteri",
+      "G08"
+    ],
+    "THEN": "P02",
+    "CF": 0.75,
+    "ikan": [
+      "lele",
+      "nila",
+      "gurame"
+    ]
+  },
+  {
+    "id": "R05",
+    "IF": [
+      "G04",
+      "G07"
+    ],
+    "THEN": "P05",
+    "CF": 0.85,
+    "ikan": [
+      "nila"
+    ]
+  }
+]
