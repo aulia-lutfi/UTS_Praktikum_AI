@@ -31,7 +31,9 @@ python -m pytest -v          # pengujian (opsional, perlu pytest)
 | Pengujian 11 kasus uji + unit test | `tests/test_cases.py` |
 
 ## Penyakit dalam knowledge base
-White Spot (Ich), MAS/Aeromonas, Columnaris, Saprolegniasis, Streptococcosis (nila), cacing insang (monogenea), Argulus.
+P01 White Spot (Ich), P02 MAS/Aeromonas, P03 Columnaris, P04 Saprolegniasis, P05 Trichodina, P06 cacing insang (monogenea), P07 Streptococcosis (nila, gurame), P08 Argulosis/kutu ikan (lele, gurame), P09 Jaundice, P10 ESC.
+
+Catatan: P05 (Trichodina), P09, dan P10 belum punya rule inferensi. P05 butuh sumber khusus Trichodina sebelum dibuatkan rule, atau dikeluarkan dari daftar penyakit bila tim tidak membahasnya.
 Setiap penyakit memuat: penyebab, penularan, gejala, cara konfirmasi, penanganan langkah demi langkah, pencegahan,
 pembatasan penyebaran, kapan memanggil ahli, dan rujukan bertaut. Butir bertanda "praktik umum" belum punya sumber
 tertaut dan perlu divalidasi pakar. Nilai CF pada rule adalah estimasi heuristik tim.
