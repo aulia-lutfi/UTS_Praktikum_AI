@@ -1,0 +1,238 @@
+[
+  {
+    "id": "R50",
+    "IF": [
+      "G04",
+      "G07"
+    ],
+    "THEN": "P07",
+    "CF": 0.85,
+    "ikan": [
+      "nila",
+      "gurame"
+    ],
+    "jenis": "heuristik",
+    "sumber": [
+      "anshary2014",
+      "hardi2011",
+      "ugm_strep_pcr"
+    ],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Streptococcosis (nila, gurame); nilai CF adalah estimasi heuristik tim dan perlu divalidasi pakar."
+  },
+  {
+    "id": "R51",
+    "IF": [
+      "G04",
+      "G12"
+    ],
+    "THEN": "P07",
+    "CF": 0.7,
+    "ikan": [
+      "nila",
+      "gurame"
+    ],
+    "jenis": "heuristik",
+    "sumber": [
+      "anshary2014",
+      "hardi2011",
+      "ugm_strep_pcr"
+    ],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Streptococcosis (nila, gurame); nilai CF adalah estimasi heuristik tim dan perlu divalidasi pakar."
+  },
+  {
+    "id": "R52",
+    "IF": [
+      "G55",
+      "G04"
+    ],
+    "THEN": "P07",
+    "CF": 0.75,
+    "ikan": [
+      "nila",
+      "gurame"
+    ],
+    "jenis": "heuristik",
+    "sumber": [
+      "anshary2014",
+      "hardi2011",
+      "ugm_strep_pcr"
+    ],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Streptococcosis (nila, gurame); nilai CF adalah estimasi heuristik tim dan perlu divalidasi pakar."
+  },
+  {
+    "id": "R53",
+    "IF": [
+      "G07",
+      "G15"
+    ],
+    "THEN": "P07",
+    "CF": 0.5,
+    "ikan": [
+      "nila",
+      "gurame"
+    ],
+    "jenis": "heuristik",
+    "sumber": [
+      "anshary2014",
+      "hardi2011",
+      "ugm_strep_pcr"
+    ],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Streptococcosis (nila, gurame); nilai CF adalah estimasi heuristik tim dan perlu divalidasi pakar."
+  },
+  {
+    "id": "R54",
+    "IF": [
+      "G03",
+      "G53"
+    ],
+    "THEN": "dugaan_gangguan_insang",
+    "CF": 0.7,
+    "ikan": [
+      "lele",
+      "nila",
+      "gurame"
+    ],
+    "jenis": "heuristik",
+    "sumber": [
+      "reed2012",
+      "uf_vm77",
+      "saint_erne2022"
+    ],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Cacing insang (Dactylogyrus/Gyrodactylus); nilai CF adalah estimasi heuristik tim dan perlu divalidasi pakar."
+  },
+  {
+    "id": "R55",
+    "IF": [
+      "dugaan_gangguan_insang",
+      "G10"
+    ],
+    "THEN": "P06",
+    "CF": 0.8,
+    "ikan": [
+      "lele",
+      "nila",
+      "gurame"
+    ],
+    "jenis": "heuristik",
+    "sumber": [
+      "reed2012",
+      "uf_vm77",
+      "saint_erne2022"
+    ],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Cacing insang (Dactylogyrus/Gyrodactylus); nilai CF adalah estimasi heuristik tim dan perlu divalidasi pakar."
+  },
+  {
+    "id": "R56",
+    "IF": [
+      "G10",
+      "G54"
+    ],
+    "THEN": "P06",
+    "CF": 0.7,
+    "ikan": [
+      "lele",
+      "nila",
+      "gurame"
+    ],
+    "jenis": "heuristik",
+    "sumber": [
+      "reed2012",
+      "uf_vm77",
+      "saint_erne2022"
+    ],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Cacing insang (Dactylogyrus/Gyrodactylus); nilai CF adalah estimasi heuristik tim dan perlu divalidasi pakar."
+  },
+  {
+    "id": "R57",
+    "IF": [
+      "dugaan_gangguan_insang",
+      "G08"
+    ],
+    "THEN": "P06",
+    "CF": 0.6,
+    "ikan": [
+      "lele",
+      "nila",
+      "gurame"
+    ],
+    "jenis": "heuristik",
+    "sumber": [
+      "reed2012",
+      "uf_vm77",
+      "saint_erne2022"
+    ],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Cacing insang (Dactylogyrus/Gyrodactylus); nilai CF adalah estimasi heuristik tim dan perlu divalidasi pakar."
+  },
+  {
+    "id": "R58",
+    "IF": [
+      "G50",
+      "G52"
+    ],
+    "THEN": "P08",
+    "CF": 0.85,
+    "ikan": [
+      "lele",
+      "gurame"
+    ],
+    "jenis": "heuristik",
+    "sumber": [
+      "uf_fa184"
+    ],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Argulosis (kutu ikan, Argulus); nilai CF adalah estimasi heuristik tim dan perlu divalidasi pakar."
+  },
+  {
+    "id": "R59",
+    "IF": [
+      "G50",
+      "G51"
+    ],
+    "THEN": "P08",
+    "CF": 0.8,
+    "ikan": [
+      "lele",
+      "gurame"
+    ],
+    "jenis": "heuristik",
+    "sumber": [
+      "uf_fa184"
+    ],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Argulosis (kutu ikan, Argulus); nilai CF adalah estimasi heuristik tim dan perlu divalidasi pakar."
+  },
+  {
+    "id": "R60",
+    "IF": [
+      "G51",
+      "G09"
+    ],
+    "THEN": "dugaan_ektoparasit_besar",
+    "CF": 0.6,
+    "ikan": [
+      "lele",
+      "gurame"
+    ],
+    "jenis": "heuristik",
+    "sumber": [
+      "uf_fa184"
+    ],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Argulosis (kutu ikan, Argulus); nilai CF adalah estimasi heuristik tim dan perlu divalidasi pakar."
+  },
+  {
+    "id": "R61",
+    "IF": [
+      "dugaan_ektoparasit_besar",
+      "G52"
+    ],
+    "THEN": "P08",
+    "CF": 0.7,
+    "ikan": [
+      "lele",
+      "gurame"
+    ],
+    "jenis": "heuristik",
+    "sumber": [
+      "uf_fa184"
+    ],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Argulosis (kutu ikan, Argulus); nilai CF adalah estimasi heuristik tim dan perlu divalidasi pakar."
+  }
+]

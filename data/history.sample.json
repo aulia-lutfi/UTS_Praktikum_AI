@@ -1,0 +1,61 @@
+[
+  {
+    "timestamp": "2026-10-24T09:15:00",
+    "ikan": "lele",
+    "gejala": {
+      "G01": 0.8,
+      "G09": 1.0,
+      "G08": 0.8
+    },
+    "hasil": [
+      {
+        "id": "P01",
+        "nama": "White Spot (Ich)",
+        "cf": 0.82
+      }
+    ],
+    "rules_dipakai": [
+      "R01",
+      "R03",
+      "R02"
+    ]
+  },
+  {
+    "timestamp": "2026-10-25T14:30:00",
+    "ikan": "nila",
+    "gejala": {
+      "G04": 1.0,
+      "G07": 0.8
+    },
+    "hasil": [
+      {
+        "id": "P07",
+        "nama": "Streptococcosis (nila)",
+        "cf": 0.68
+      }
+    ],
+    "rules_dipakai": [
+      "R50"
+    ]
+  },
+  {
+    "timestamp": "2026-10-25T16:05:00",
+    "ikan": "gurame",
+    "gejala": {
+      "G02": 0.8,
+      "G05": 0.8,
+      "G08": 0.6
+    },
+    "hasil": [
+      {
+        "id": "P02",
+        "nama": "MAS / Aeromonas",
+        "cf": 0.42
+      }
+    ],
+    "rules_dipakai": [
+      "R05",
+      "R06"
+    ]
+  }
+]

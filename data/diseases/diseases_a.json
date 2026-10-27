@@ -1,0 +1,182 @@
+{
+  "P01": {
+    "name": "Bintik Putih (White Spot / Ichthyophthiriasis)",
+    "species": ["Lele", "Nila", "Gurame"],
+    "symptoms_desc": "Bintik-bintik putih halus menyerupai butiran garam pada kulit, sirip, dan insang. Ikan sering menggosokkan badan ke dinding/dasar kolam dan berenang gelisah.",
+    "treatments": [
+      "Isolasi segera ikan yang terinfeksi ke kolam karantina untuk mencegah penularan masif.",
+      "Tingkatkan suhu air kolam secara bertahap hingga 28°C–30°C untuk memutus siklus hidup parasit.",
+      "Lakukan penggaraman air (Garam Krosok/Ikan) dengan dosis 1–3 gram per liter air selama 3–5 hari.",
+      "Tingkatkan aerasi oksigen terlarut (DO) dan lakukan pergantian air berkala 20%–30% per hari.",
+      "Lakukan perendaman dalam larutan Methylene Blue atau Formalin jika infeksi meluas.",
+      "Berikan ekstrak daun sirih atau bawang putih pada pakan untuk meningkatkan imunitas."
+    ],
+    "prevention": "Karantina bibit baru minimal 7 hari, pastikan kebersihan air, hindari perubahan suhu drastis, dan rutin membersihkan filter.",
+    "references": [
+      { "title": "UF/IFAS FA006. Ichthyophthirius multifiliis (White Spot) Infections in Fish.", "url": "https://ask.ifas.ufl.edu/publication/FA006" },
+      { "title": "Digitani IPB (2023). Kenali Ragam Penyakit Ikan Lele: Gejala dan Solusinya.", "url": "https://digitani.ipb.ac.id/4250-2/" }
+    ]
+  },
+  "P02": {
+    "name": "Motile Aeromonas Septicemia (MAS / Penyakit Bercak Merah)",
+    "species": ["Lele", "Nila", "Gurame"],
+    "symptoms_desc": "Pendarahan berupa bercak merah (ulser) pada kulit, perut kembung berisi cairan (dropsy), sisik mengelupas, serta insang pucat membusuk.",
+    "treatments": [
+      "Ganti air kolam 30%–50% untuk mereduksi konsentrasi bakteri Aeromonas hydrophila.",
+      "Hentikan pakan pelet sementara (puasakan 1-2 hari) dan kurangi padat tebar kolam.",
+      "Berikan pakan yang diperkaya imunostimulan alami (daun sirih, meniran, atau bawang putih).",
+      "Lakukan perendaman ikan sakit dalam larutan garam perikanan (2–5 gram/liter) selama 15–30 menit.",
+      "Gunakan terapi antibakteri teruji sesuai dosis dokter hewan jika kematian harian tinggi.",
+      "Tambahkan probiotik ke dalam air kolam untuk menekan bakteri patogen."
+    ],
+    "prevention": "Jaga kualitas air (pH 6.5–8.5, Amonia < 0.1 mg/L), bersihkan sisa pakan, dan berikan pakan bergizi seimbang.",
+    "references": [
+      { "title": "Sugiani dkk. (2018). Vaksin kering beku sel utuh bakteri Aeromonas hydrophila. Jurnal Riset Akuakultur.", "url": "https://ejournal-balitbang.kkp.go.id/index.php/jra/article/download/6430/5784" },
+      { "title": "Minapoli (2025). Jenis Penyakit Ikan Lele Dan Cara Mengobatinya.", "url": "https://www.minapoli.com/info/jenis-penyakit-ikan-lele-dan-cara-mengobatinya" }
+    ]
+  },
+  "P03": {
+    "name": "Penyakit Columnaris (Penyakit Kapas / Flavobacterium)",
+    "species": ["Lele", "Nila"],
+    "symptoms_desc": "Luka atau bercak putih keabu-abuan menyerupai gumpalan kapas di mulut, punggung, atau sirip. Sirip geripis dan insang membusuk.",
+    "treatments": [
+      "Kurangi kepadatan tebar ikan untuk meminimalkan kontak fisik dan stres.",
+      "Bersihkan endapan bahan organik dan sisa pakan busuk di dasar kolam.",
+      "Berikan pakan berkualitas tinggi yang dicampur Vitamin C dosis tinggi.",
+      "Lakukan perendaman ikan dalam larutan garam dapur (5 gram/liter) selama 15 menit.",
+      "Gunakan Kalium Permanganat (KMnO4) dosis 2-4 mg/L sebagai desinfektan air kolam.",
+      "Hindari penggunaan antibiotik yang tidak perlu karena bakteri ini sering resisten."
+    ],
+    "prevention": "Hindari stres fisik saat handling/grading ikan, jaga suhu air stabil, dan rutin memantau kualitas air.",
+    "references": [
+      { "title": "SRAC 479. Columnaris Disease: A Bacterial Infection Caused by Flavobacterium columnare.", "url": "https://srac.tamu.edu/fact-sheets/serve/128" },
+      { "title": "Liputan6 (2026). 7 Penyakit Ikan Lele yang Paling Umum dan Cara Mengobatinya.", "url": "https://www.liputan6.com/citizen6/read/6251297/7-penyakit-ikan-lele-yang-paling-umum-dan-cara-mengobatinya-yang-perlu-diwaspadai" }
+    ]
+  },
+  "P04": {
+    "name": "Saprolegniasis (Jamur Air / Cotton Wool Disease)",
+    "species": ["Nila", "Gurame", "Lele"],
+    "symptoms_desc": "Tumbuhnya benang-benang serabut halus menyerupai kapas berwarna putih kecoklatan pada luka luar kulit ikan atau massa telur.",
+    "treatments": [
+      "Ambil dan pisahkan secara fisik ikan atau telur yang terinfeksi parah ke wadah karantina.",
+      "Rendam ikan yang sakit ke dalam larutan garam perikanan (5–10 gram/liter) selama 10–15 menit.",
+      "Gunakan ekstrak herbal alami seperti buah mengkudu matang, daun pepaya, atau eceng gondok.",
+      "Bersihkan total media penetasan dari bahan organik busuk.",
+      "Untuk kasus berat, gunakan larutan Formalin atau Methylene Blue sebagai anti-jamur.",
+      "Pastikan aerasi tetap berjalan kencang selama proses pengobatan."
+    ],
+    "prevention": "Gunakan penanganan lembut saat memindahkan ikan, jaga kualitas air tetap bersih, dan hindari fluktuasi suhu ekstrem.",
+    "references": [
+      { "title": "Lindholm-Lehto & Pylkko (2024). Saprolegniosis in aquaculture and how to control it?", "url": "https://doi.org/10.1002/aff2.200" },
+      { "title": "Wirawan dkk. (2017). Diagnosa, Analisis dan Identifikasi Parasit yang Menyerang Ikan Nila (PDF).", "url": "doc/nila1.pdf" }
+    ]
+  },
+  "P05": {
+    "name": "Infeksi Trichodina (Trichodiniasis / Parasit Gatal)",
+    "species": ["Lele", "Nila", "Gurame"],
+    "symptoms_desc": "Ikan tampak gelisah, sering menggosokkan badan ke dinding/dasar kolam, lendir berlebihan pada kulit dan insang, serta warna tubuh kusam.",
+    "treatments": [
+      "Ganti air kolam secara bertahap sebanyak 30%–40% untuk mengurangi kepadatan parasit.",
+      "Lakukan perendaman ikan dalam larutan Garam Krosok (10–15 gram/liter) selama 5–10 menit.",
+      "Gunakan larutan Formalin atau Kalium Permanganat untuk membunuh parasit yang tersisa di air.",
+      "Gunakan aerasi yang kuat selama proses pengobatan.",
+      "Kurangi pemberian pakan harian hingga kondisi air dan ikan membaik.",
+      "Berikan pakan yang mengandung imunostimulan setelah pengobatan."
+    ],
+    "prevention": "Jaga air tidak terlalu keruh, rutin membersihkan dasar kolam, atur padat tebar, dan karantina ikan baru.",
+    "references": [
+      { "title": "Wirawan dkk. (2017). Diagnosa, Analisis dan Identifikasi Parasit yang Menyerang Ikan Nila (PDF).", "url": "doc/nila1.pdf" },
+      { "title": "Nesi dkk. Sistem Pakar Diagnosa Penyakit Ikan Gurame Menggunakan FIS Mamdani (PDF).", "url": "doc/gurame.pdf" }
+    ]
+  },
+  "P06": {
+    "name": "Infeksi Cacing Dactylogyrus / Gyrodactylus (Cacing Insang & Kulit)",
+    "species": ["Lele", "Nila", "Gurame"],
+    "symptoms_desc": "Insang bengkak dan pucat, lembaran insang tidak menutup sempurna, ikan sering megap-megap di permukaan air, serta sirip rontok.",
+    "treatments": [
+      "Perendaman singkat dengan larutan garam perikanan konsentrasi tinggi (15–20 gram/liter) selama 3–5 menit.",
+      "Perlakuan perendaman larutan Kalium Permanganat (PK) konsentrasi 0,01% selama 30 menit.",
+      "Tingkatkan kadar oksigen terlarut dengan menambah blower/aerator.",
+      "Bersihkan dan kuras lumpur sisa pakan di dasar kolam.",
+      "Gunakan larutan Formalin atau Praziquantel sebagai obat anti-cacing jika infeksi parah.",
+      "Karantina ikan yang terinfeksi berat di wadah terpisah."
+    ],
+    "prevention": "Saring air pasokan kolam, lakukan perendaman garam pada benih baru, dan rutin membersihkan dasar kolam.",
+    "references": [
+      { "title": "Wirawan dkk. (2017). Diagnosa, Analisis dan Identifikasi Parasit yang Menyerang Ikan Nila (PDF).", "url": "doc/nila1.pdf" },
+      { "title": "Susanti dkk. (2017). Sistem Pakar Diagnosis Penyakit Pada Ikan Nila (PDF).", "url": "doc/nila2.pdf" }
+    ]
+  },
+  "P07": {
+    "name": "Streptococcosis (Penyakit Bakteri Streptococcus)",
+    "species": ["Nila", "Gurame"],
+    "symptoms_desc": "Mata menonjol keluar (pop-eye), berenang berputar-putar tanpa arah (whirling disease), pendarahan di sekitar anus/pangkal sirip, dan kematian mendadak.",
+    "treatments": [
+      "Kurangi paparan sinar matahari langsung pada kolam.",
+      "Segera kurangi pakan hingga 50% dari dosis normal.",
+      "Lakukan penggantian air secara perlahan dan rutin (20-30% per hari).",
+      "Berikan herbal imunostimulan pada pakan.",
+      "Gunakan antibiotik berizin sesuai resep dokter hewan jika kematian massal terjadi.",
+      "Isolasi ikan yang menunjukkan gejala berat."
+    ],
+    "prevention": "Jaga kualitas air agar tidak terpapar amonia tinggi, hindari kepadatan tebar berlebih, dan berikan pakan protein sesuai.",
+    "references": [
+      { "title": "Susanti dkk. (2017). Sistem Pakar Diagnosis Penyakit Pada Ikan Nila (PDF).", "url": "doc/nila2.pdf" },
+      { "title": "Nesi dkk. Sistem Pakar Diagnosa Penyakit Ikan Gurame Menggunakan FIS Mamdani (PDF).", "url": "doc/gurame.pdf" }
+    ]
+  },
+  "P08": {
+    "name": "Penyakit Kutu Ikan (Argulosis / Argulus)",
+    "species": ["Gurame", "Lele"],
+    "symptoms_desc": "Terlihat parasit pipih berbentuk kepiting kecil menempel pada kulit/sirip, bekas gigitan memerah, dan ikan melompat-lompat di atas air.",
+    "treatments": [
+      "Pembersihan parasit secara manual menggunakan pinset jika jumlah ikan terbatas.",
+      "Perendaman ikan dalam larutan garam dapur dosis 10 gram/liter selama 15 menit.",
+      "Gunakan larutan Kalium Permanganat (KMnO4) dosis 2-4 mg/L untuk membunuh kutu.",
+      "Pengeringan dan pengapuran dasar kolam setelah panen untuk membunuh telur.",
+      "Pisahkan ikan yang terinfeksi berat ke kolam karantina.",
+      "Berikan pakan bergizi tinggi untuk mempercepat regenerasi kulit."
+    ],
+    "prevention": "Saring air yang masuk ke kolam dengan kain halus, karantina ikan baru, dan rutin mengeringkan kolam setelah panen.",
+    "references": [
+      { "title": "UF/IFAS FA184. Argulus (Fish Louse) Infections in Fish.", "url": "https://ask.ifas.ufl.edu/publication/FA184" },
+      { "title": "Nesi dkk. Sistem Pakar Diagnosa Penyakit Ikan Gurame Menggunakan FIS Mamdani (PDF).", "url": "doc/gurame.pdf" }
+    ]
+  },
+  "P09": {
+    "name": "Penyakit Jaundice (Kuning Lele)",
+    "species": ["Lele"],
+    "symptoms_desc": "Tubuh ikan berubah warna menjadi kuning terang (terutama perut dan sirip), darah pucat encer, lemas, dan kematian bertahap.",
+    "treatments": [
+      "Lakukan pengurasan total kolam dan ganti dengan air bersih yang diendapkan.",
+      "Hentikan pemberian pakan pelet berprotein berlebihan atau pakan busuk.",
+      "Tambahkan suplemen vitamin (C dan E) serta hepatoprotektor pada pakan.",
+      "Berikan aerasi tinggi untuk meningkatkan oksigen terlarut.",
+      "Tabur garam krosok 1 gram/liter air untuk membantu osmoregulasi.",
+      "Konsultasikan ke dokter hewan ikan jika gejala menyebar cepat."
+    ],
+    "prevention": "Gunakan pakan segar berkualitas, hindari pakan kedaluwarsa, jaga kualitas air, dan rutin membersihkan dasar kolam.",
+    "references": [
+      { "title": "Liputan6 (2026). 7 Penyakit Ikan Lele yang Paling Umum dan Cara Mengobatinya.", "url": "https://www.liputan6.com/citizen6/read/6251297/7-penyakit-ikan-lele-yang-paling-umum-dan-cara-mengobatinya-yang-perlu-diwaspadai" },
+      { "title": "Septian dkk. Sistem Pakar Diagnosis Penyakit Ikan Lele Menggunakan Metode Certainty Factor (PDF).", "url": "doc/lele.pdf" }
+    ]
+  },
+  "P10": {
+    "name": "Enteric Septicemia of Catfish (ESC / Edwardsiellosis)",
+    "species": ["Lele", "Nila"],
+    "symptoms_desc": "Luka lubang/pendarahan pada bagian kepala di antara kedua mata (hole in the head), ikan berenang berputar, dan bau busuk menyengat.",
+    "treatments": [
+      "Isolasi ikan yang memperlihatkan gejala luka di bagian kepala ke kolam karantina.",
+      "Lakukan pergantian air rutin (30% per hari) dan pembersihan lumpur dasar kolam.",
+      "Berikan pakan yang diperkaya ekstrak herbal antibakteri alami (daun sirih/bawang putih).",
+      "Konsultasikan penggunaan terapi antibakteri spesifik sesuai pedoman dokter hewan.",
+      "Kurangi kepadatan tebar ikan untuk mengurangi stres.",
+      "Berikan vitamin C dosis tinggi pada pakan untuk mempercepat penyembuhan luka."
+    ],
+    "prevention": "Atur konsentrasi amonia dan kurangi bahan organik di kolam, karantina ikan baru, dan hindari pakan berlebihan.",
+    "references": [
+      { "title": "Digitani IPB (2023). Kenali Ragam Penyakit Ikan Lele: Gejala dan Solusinya.", "url": "https://digitani.ipb.ac.id/4250-2/" },
+      { "title": "Septian dkk. Sistem Pakar Diagnosis Penyakit Ikan Lele Menggunakan Metode Certainty Factor (PDF).", "url": "doc/lele.pdf" }
+    ]
+  }
+}
