@@ -1,0 +1,26 @@
+{
+  "G50": {
+    "nama": "Parasit terlihat menempel di tubuh",
+    "kategori": "Fisik"
+  },
+  "G51": {
+    "nama": "Bintik merah kecil di kulit",
+    "kategori": "Fisik"
+  },
+  "G52": {
+    "nama": "Gelisah/berenang liar/melompat",
+    "kategori": "Perilaku"
+  },
+  "G53": {
+    "nama": "Insang berlendir berlebihan",
+    "kategori": "Fisik"
+  },
+  "G54": {
+    "nama": "Tutup insang tidak menutup sempurna",
+    "kategori": "Fisik"
+  },
+  "G55": {
+    "nama": "Kornea mata keruh",
+    "kategori": "Fisik"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "G01": {
+    "nama": "Bintik putih di tubuh/sirip",
+    "kategori": "Fisik"
+  },
+  "G02": {
+    "nama": "Luka/borok merah di tubuh",
+    "kategori": "Fisik"
+  },
+  "G03": {
+    "nama": "Insang pucat",
+    "kategori": "Fisik"
+  },
+  "G04": {
+    "nama": "Mata menonjol",
+    "kategori": "Fisik"
+  },
+  "G05": {
+    "nama": "Perut kembung",
+    "kategori": "Fisik"
+  },
+  "G06": {
+    "nama": "Gumpalan seperti kapas",
+    "kategori": "Fisik"
+  },
+  "G07": {
+    "nama": "Berenang tidak normal (berputar)",
+    "kategori": "Perilaku"
+  },
+  "G08": {
+    "nama": "Nafsu makan turun",
+    "kategori": "Perilaku"
+  },
+  "G09": {
+    "nama": "Menggosokkan badan ke dinding/dasar",
+    "kategori": "Perilaku"
+  },
+  "G10": {
+    "nama": "Megap-megap di permukaan",
+    "kategori": "Perilaku"
+  },
+  "G11": {
+    "nama": "Sirip rusak/geripis",
+    "kategori": "Fisik"
+  },
+  "G12": {
+    "nama": "Pendarahan di tubuh/pangkal sirip",
+    "kategori": "Fisik"
+  },
+  "G13": {
+    "nama": "Bercak putih keabuan di mulut/tubuh",
+    "kategori": "Fisik"
+  },
+  "G15": {
+    "nama": "Ikan lemas/diam di dasar kolam",
+    "kategori": "Perilaku"
+  }
+}

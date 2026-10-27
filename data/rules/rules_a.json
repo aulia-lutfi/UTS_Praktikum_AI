@@ -1,0 +1,182 @@
+[
+  {
+    "id": "R01",
+    "IF": ["G01", "G09"],
+    "THEN": "dugaan_parasit_kulit",
+    "CF": 0.7,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["uf_fa006", "lele_digitani"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk White Spot (Ich)."
+  },
+  {
+    "id": "R02",
+    "IF": ["dugaan_parasit_kulit", "G08"],
+    "THEN": "P01",
+    "CF": 0.8,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["uf_fa006", "lele_minapoli"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk White Spot (Ich)."
+  },
+  {
+    "id": "R03",
+    "IF": ["G01", "G08"],
+    "THEN": "P01",
+    "CF": 0.6,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["uf_fa006", "lele_liputan6"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk White Spot (Ich)."
+  },
+  {
+    "id": "R04",
+    "IF": ["G01", "G09", "G10"],
+    "THEN": "P01",
+    "CF": 0.65,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["uf_fa006", "nila_warmadewa"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk White Spot (Ich)."
+  },
+  {
+    "id": "R05",
+    "IF": ["G02", "G05"],
+    "THEN": "dugaan_infeksi_bakteri",
+    "CF": 0.7,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["sugiani2018", "lele_mutiara"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk MAS / Aeromonas."
+  },
+  {
+    "id": "R06",
+    "IF": ["dugaan_infeksi_bakteri", "G08"],
+    "THEN": "P02",
+    "CF": 0.75,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["sugiani2018", "lele_kalteng"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk MAS / Aeromonas."
+  },
+  {
+    "id": "R07",
+    "IF": ["G02", "G12"],
+    "THEN": "P02",
+    "CF": 0.7,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["sugiani2018", "lele_sigma"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk MAS / Aeromonas."
+  },
+  {
+    "id": "R08",
+    "IF": ["G11", "G12"],
+    "THEN": "P02",
+    "CF": 0.55,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["sugiani2018", "nila_ejournal"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk MAS / Aeromonas."
+  },
+  {
+    "id": "R09",
+    "IF": ["G13", "G03"],
+    "THEN": "P03",
+    "CF": 0.8,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["srac_479", "lele_bukugoogle"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Columnaris."
+  },
+  {
+    "id": "R10",
+    "IF": ["G13", "G15"],
+    "THEN": "P03",
+    "CF": 0.6,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["srac_479", "nila_nusanipa"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Columnaris."
+  },
+  {
+    "id": "R11",
+    "IF": ["G13", "G11"],
+    "THEN": "P03",
+    "CF": 0.65,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["srac_479", "lele_pdf_dosen"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Columnaris."
+  },
+  {
+    "id": "R12",
+    "IF": ["G06", "G02"],
+    "THEN": "P04",
+    "CF": 0.75,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["lindholm2024", "gurame_ejournal"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Saprolegniasis."
+  },
+  {
+    "id": "R13",
+    "IF": ["G06"],
+    "THEN": "dugaan_infeksi_jamur",
+    "CF": 0.7,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["lindholm2024", "nila_warmadewa"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Saprolegniasis."
+  },
+  {
+    "id": "R14",
+    "IF": ["dugaan_infeksi_jamur", "G15"],
+    "THEN": "P04",
+    "CF": 0.7,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["lindholm2024", "gurame_pdf_dosen"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Saprolegniasis."
+  },
+  {
+    "id": "R15",
+    "IF": ["G06", "G11"],
+    "THEN": "P04",
+    "CF": 0.6,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["lindholm2024", "lele_uinmalang"],
+    "keterangan": "Kombinasi gejala berdasar rujukan untuk Saprolegniasis."
+  },
+   {
+    "id": "R70",
+    "IF": ["G09", "G08"],
+    "THEN": "P05",
+    "CF": 0.7,
+    "ikan": ["lele", "nila", "gurame"],
+    "jenis": "heuristik",
+    "sumber": ["nila_pdf_1", "gurame_pdf_dosen"], 
+    "keterangan": "Kombinasi gelisah dan nafsu makan turun untuk Trichodina."
+  },
+  {
+    "id": "R71",
+    "IF": ["G15", "G08"],
+    "THEN": "P09",
+    "CF": 0.8,
+    "ikan": ["lele"],
+    "jenis": "heuristik",
+    "sumber": ["lele_liputan6", "lele_pdf_dosen"], 
+    "keterangan": "Kombinasi lemas dan nafsu makan turun untuk Jaundice pada Lele."
+  },
+  {
+    "id": "R72",
+    "IF": ["G07", "G08"],
+    "THEN": "P10",
+    "CF": 0.75,
+    "ikan": ["lele", "nila"],
+    "jenis": "heuristik",
+    "sumber": ["lele_digitani", "lele_pdf_dosen"], 
+    "keterangan": "Kombinasi berputar dan nafsu makan turun untuk ESC."
+  }
+]
