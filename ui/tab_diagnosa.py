@@ -32,9 +32,9 @@ def _reset() -> None:
             del st.session_state[k]
 
 
-def _form_gejala(kb) -> None:
+def _form_gejala(kb, cari: str = "") -> None:
     pilihan = st.session_state.setdefault(KUNCI_PILIHAN, {})
-    cari = st.text_input("Cari gejala", placeholder="mis. insang, nafsu makan", key="diag_cari_input").strip().lower()
+    cari = cari.strip().lower()
     if pilihan:
         st.caption(f"{len(pilihan)} gejala dipilih.")
     
@@ -202,9 +202,14 @@ def _tampilkan_hasil(kb) -> None:
 
 
 def render(kb, engine, history) -> None:
-    ikan = st.selectbox("Jenis ikan", DAFTAR_IKAN, index=None, placeholder="Pilih jenis ikan",
-                        key="diag_ikan_v3")
-    _form_gejala(kb)
+    kolom_ikan, kolom_cari = st.columns([1, 2], gap="medium")
+    with kolom_ikan:
+        ikan = st.selectbox("Jenis ikan", DAFTAR_IKAN, index=None, placeholder="Pilih jenis ikan",
+                            key="diag_ikan_v3")
+    with kolom_cari:
+        cari = st.text_input("Cari gejala", placeholder="mis. insang, nafsu makan",
+                             key="diag_cari_input")
+    _form_gejala(kb, cari)
 
     kol1, kol2 = st.columns([1, 5])
     if kol1.button("Diagnosa", type="primary", key="btn_diag_submit"):
