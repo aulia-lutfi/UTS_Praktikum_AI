@@ -126,15 +126,6 @@ Muat dan simpan melewati `core/knowledge_base.py` dengan pemeriksaan berikut.
 - ID rujukan pada field `sumber` harus ada di `data/references/references.json`.
 - Penulisan berkas memakai berkas sementara lalu `os.replace`, sehingga data tidak rusak bila proses berhenti di tengah penyimpanan.
 
-## Status dan pekerjaan yang belum selesai
-
-- Rujukan antar modul belum selaras. Sebanyak 26 peringatan validasi muncul karena ID pada field `sumber` beberapa aturan, misalnya `nila_warmadewa` dan `anshary2014`, belum terdaftar di `references.json`. Kondisi ini membuat `test_kb_valid` dan `test_rujukan_lengkap` belum lolos.
-- Nilai CF seluruhnya estimasi heuristik tim dan belum divalidasi pakar.
-- Berkas `ui/components.py` adalah sisa versi antarmuka sebelumnya dan tidak dipanggil dari tab mana pun.
-- Ekspor laporan menerima daftar rujukan sebagai parameter, tetapi tab Riwayat belum mengirimkannya, sehingga tautan pustaka belum muncul di berkas hasil ekspor.
-- Panel peringatan validasi basis pengetahuan saat ini dinonaktifkan di `app.py`, sehingga masalah data tidak terlihat saat aplikasi berjalan.
-- Dokumentasi tugas belum lengkap, yaitu tangkapan layar aplikasi, laporan, dan video demo.
-
 ## Alur kontribusi
 
 Setiap modul dikerjakan pada branch sendiri, misalnya `feature/setup-config`, `feature/knowledge-data`, `feature/core-engine`, `feature/ui-interface`, dan `feature/services-and-testing`, lalu digabungkan ke `main` melalui pull request yang sudah direview. Simpan `main` sebagai acuan ketika memulai pekerjaan baru agar perubahan modul lain sudah ikut terpakai.
