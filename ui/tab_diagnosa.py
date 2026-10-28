@@ -40,7 +40,7 @@ def _form_gejala(kb, cari: str = "") -> None:
     
     labels = list(KEYAKINAN.keys()) if isinstance(KEYAKINAN, dict) else list(KEYAKINAN)
     
-    tab_fisik, tab_perilaku = st.tabs(["📌 Pengamatan Fisik", "🐟 Perubahan Perilaku"])
+    tab_fisik, tab_perilaku = st.tabs(["Pengamatan Fisik", "Perubahan Perilaku"])
     
     kategori_map = {
         "Fisik": tab_fisik,
