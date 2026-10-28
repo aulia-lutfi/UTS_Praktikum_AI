@@ -33,22 +33,24 @@ h2{font-size:1.9rem;} h3{font-size:1.35rem;}
 a{color:var(--acc)!important;text-decoration:none;} a:hover{text-decoration:underline;}
 
 /* hero */
-.hero{position:relative;border-radius:18px;overflow:hidden;min-height:370px;padding:56px 52px;margin-bottom:0;
+.hero{position:relative;border-radius:18px;overflow:hidden;min-height:370px;padding:56px 52px;margin-bottom:24px;
  background:linear-gradient(100deg,#0A1730 0%,#0A1730 38%,rgba(10,23,48,.2) 100%),url("__HERO__") right center/cover no-repeat,#0A1730;
  border:1px solid rgba(159,179,204,.18);}
 .hero .brand{display:flex;align-items:center;gap:12px;color:var(--steel);font-size:.95rem;margin-bottom:34px;}
 .hero .logo{width:38px;height:38px;border-radius:50%;border:2px solid var(--ice);display:grid;place-items:center;color:var(--ice);font-family:'Outfit';font-size:1.1rem;}
 .hero h1{font-size:clamp(2.1rem,4.6vw,3.7rem);line-height:1.08;font-weight:300;max-width:620px;margin:0 0 18px;}
 .hero p{max-width:540px;color:#C9D6E6;font-size:1.05rem;line-height:1.55;margin:0 0 6px;}
-.strip{display:flex;flex-wrap:wrap;gap:0;background:var(--s800);border-radius:0 0 14px 14px;margin:0 22px 26px;border:1px solid rgba(159,179,204,.14);border-top:none;}
-.strip div{flex:1 1 150px;padding:14px 20px;color:var(--steel);font-size:.9rem;border-right:1px solid rgba(159,179,204,.14);}
-.strip div:last-child{border-right:none;} .strip b{display:block;color:var(--ice);font-family:'Outfit';font-weight:400;font-size:1.5rem;}
+.strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:0 0 26px;}
+.strip div{padding:16px 20px;color:var(--steel);font-size:.9rem;background:var(--s800);border:1px solid rgba(159,179,204,.18);border-radius:14px;}
+.strip b{display:block;color:var(--ice);font-family:'Outfit';font-weight:400;font-size:1.5rem;}
 
 /* tab = menu navigasi */
-.stTabs [data-baseweb="tab-list"]{gap:4px;background:var(--s800);border-radius:12px;padding:6px;border:1px solid rgba(159,179,204,.14);}
-.stTabs [data-baseweb="tab"]{height:42px;padding:0 18px;border-radius:9px;color:var(--steel);font-weight:500;background:transparent;}
-.stTabs [aria-selected="true"]{background:var(--ice)!important;color:var(--n900)!important;}
+.stTabs [data-baseweb="tab-list"]{width:max-content;max-width:100%;gap:7px;background:rgba(19,38,74,.7);border-radius:18px;padding:7px;border:1px solid rgba(159,179,204,.18);}
+.stTabs [data-baseweb="tab"],.stTabs [role="tab"]{height:44px;padding:0 18px;border:1px solid transparent;border-radius:14px!important;overflow:hidden;color:var(--steel);font-weight:500;background:transparent;white-space:nowrap;transition:background .18s,border-color .18s,color .18s,transform .18s;}
+.stTabs [data-baseweb="tab"]:hover{background:rgba(127,180,232,.12);border-color:rgba(127,180,232,.2);color:var(--ice);}
+.stTabs [aria-selected="true"]{border-radius:14px!important;overflow:hidden;background:linear-gradient(135deg,#315F91,#23466F)!important;border-color:rgba(127,180,232,.5)!important;color:#fff!important;box-shadow:0 4px 14px rgba(0,0,0,.2);}
 .stTabs [data-baseweb="tab-highlight"],.stTabs [data-baseweb="tab-border"]{display:none;}
+.stTabs [data-testid="stTabsContent"]{padding-top:1rem;}
 
 /* kartu */
 [data-testid="stVerticalBlockBorderWrapper"]{border-radius:14px;}
@@ -72,8 +74,10 @@ div[data-testid="stVerticalBlockBorderWrapper"]:has(> div > div[data-testid="stV
 .meta{color:var(--steel);font-size:.88rem;} .praktik{color:var(--warn);font-size:.78rem;margin-left:6px;}
 .chip{display:inline-block;padding:3px 12px;border-radius:999px;background:var(--s700);color:var(--ice);font-size:.82rem;margin:0 6px 6px 0;}
 .kartu{display:none;}
-@media (max-width:700px){.hero{padding:34px 24px;min-height:320px}.strip div{flex-basis:45%}}
-@media (prefers-reduced-motion:no-preference){.stTabs [data-baseweb="tab"]{transition:background .15s,color .15s}}
+@media (max-width:900px){.strip{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media (max-width:700px){.hero{padding:34px 24px;min-height:320px}.strip{grid-template-columns:repeat(2,minmax(0,1fr));margin-left:0;margin-right:0;}}
+@media (max-width:700px){.stTabs [data-baseweb="tab-list"]{width:100%;overflow-x:auto}.stTabs [data-baseweb="tab"]{padding:0 13px;font-size:.9rem}}
+@media (prefers-reduced-motion:reduce){.stTabs [data-baseweb="tab"]{transition:none}}
 """
 
 
@@ -83,7 +87,7 @@ def inject_css() -> None:
 
 
 def hero(kb) -> None:
-    """Banner utama + strip statistik knowledge base."""
+    """Banner utama + kartu statistik knowledge base."""
     n_ref = len(kb.references)
     st.markdown(
         f"""<div class="hero"><div class="brand"><span class="logo">SP</span>Sistem Pakar Kesehatan Ikan</div>
