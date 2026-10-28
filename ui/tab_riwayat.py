@@ -79,4 +79,17 @@ def render(kb, engine, history) -> None:
             
             k1.download_button("Unduh TXT", export_txt(rec, dict_nama_gejala), f"diagnosis_{rec_id}.txt", "text/plain", key=f"dl_txt_{rec_id}")
             k2.download_button("Unduh CSV", export_csv(rec), f"diagnosis_{rec_id}.csv", "text/csv", key=f"dl_csv_{rec_id}")
-            k3.download_button("Unduh PDF", export_pdf(rec, dict_nama_gejala), f"diagnosis_{rec_id}.pdf", "application/pdf", key=f"dl_pdf_{rec_id}")
+            try:
+                pdf_data = export_pdf(rec, dict_nama_gejala)
+            except ModuleNotFoundError as exc:
+                if exc.name != "fpdf":
+                    raise
+                k3.warning(
+                    "Ekspor PDF belum tersedia. Instal dependensi proyek dengan "
+                    "`python -m pip install -r requirements.txt`, lalu jalankan ulang aplikasi."
+                )
+            else:
+                k3.download_button(
+                    "Unduh PDF", pdf_data, f"diagnosis_{rec_id}.pdf", "application/pdf",
+                    key=f"dl_pdf_{rec_id}",
+                )
